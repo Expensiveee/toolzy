@@ -7,6 +7,5 @@
     "emitDecoratorMetadata": true,
     "target": "es2021"
   },
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
   "include": ["src/**/*.ts", "../../reset.d.ts"]
 }
