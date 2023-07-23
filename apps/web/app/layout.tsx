@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Toolzy",
   description: "Free Online Tools for Developers, Designers and Entrepreneurs.",
+  themeColor: "#ff2148",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
