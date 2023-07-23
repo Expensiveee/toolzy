@@ -1,10 +1,11 @@
 "use client";
 
-import SearchInput from "@web/components/navigation/SearchInput";
 import Link from "@web/components/ui/Link";
 import Button from "@web/components/ui/Button";
 import { FileText, Heart, Home, LifeBuoy, Tool } from "react-feather";
 import { usePathname } from "next/navigation";
+import { Search } from "react-feather";
+import Input from "@web/components/ui/Input";
 
 const navItems = [
   {
@@ -59,7 +60,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex items-center justify-end gap-2">
-        <SearchInput />
+        <div className="bg-dark flex h-auto w-fit items-center justify-start gap-2 rounded-lg border border-neutral-700 px-2">
+          <Search className="shrink-0 grow-0 text-neutral-400" size={16} />
+          <Input className="py-2" theme="none" type="text" name="query" placeholder="Find the perfect tool" />
+        </div>
         <Button theme="secondary" size="small">
           Sign Up
         </Button>
