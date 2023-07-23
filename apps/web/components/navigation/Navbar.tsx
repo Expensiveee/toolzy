@@ -60,7 +60,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex items-center justify-end gap-2">
-        <div className="bg-dark flex h-auto w-fit items-center justify-start gap-2 rounded-lg border border-neutral-700 px-2">
+        <div className="bg-dark border-dark-400/40 flex h-auto w-fit items-center justify-start gap-2 rounded-lg border px-2">
           <Search className="shrink-0 grow-0 text-neutral-400" size={16} />
           <Input className="py-2" theme="none" type="text" name="query" placeholder="Find the perfect tool" />
         </div>
