@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import React from "react";
 
 const input = cva(
-  "w-full text-sm text-white placeholder:text-zinc-400 rounded focus:outline-none active:outline-none",
+  "w-full text-sm text-white placeholder:text-neutral-400 rounded focus:outline-none active:outline-none",
   {
     variants: {
       theme: {
