@@ -4,13 +4,13 @@ import { RIPPLE_DURATION } from "@web/constants";
 import { cva, cx, type VariantProps } from "class-variance-authority";
 
 const button = cva(
-  "select-none flex relative overflow-hidden items-center rounded-[10px] border h-fit shrink-0 grow-0 font-medium capitalize transition-colors duration-300 ease-in-out",
+  "select-none flex relative overflow-hidden items-center rounded-[10px] h-fit shrink-0 grow-0 font-medium capitalize transition-colors duration-300 ease-in-out",
   {
     variants: {
       theme: {
-        primary: ["bg-primary-500", "hover:bg-primary-700", "border-primary-500/30"],
-        secondary: ["bg-primary-500/20", "hover:bg-primary-700/20", "border-primary-500/30", "text-primary-500"],
-        outline: ["bg-transparent", "hover:bg-[rgba(255,255,255,0.03)]", "border-dark-400/40"],
+        primary: ["bg-primary-500", "hover:bg-primary-700"],
+        secondary: ["bg-primary-500/20", "hover:bg-primary-700/20", "text-primary-500"],
+        outline: ["bg-transparent", "hover:bg-[rgba(255,255,255,0.03)]", "border", "border-dark-400/40"],
       },
       size: {
         small: ["px-2.5", "py-2", "text-sm"],
@@ -35,8 +35,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 const addRipple = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
   const elem = e.currentTarget;
 
-  const left = e.clientX - elem.offsetLeft;
-  const top = e.clientY - elem.offsetTop;
+  const rect = elem.getBoundingClientRect();
+  const left = e.clientX - rect.left;
+  const top = e.clientY - rect.top;
   const height = elem.clientHeight;
   const width = elem.clientWidth;
   const diameter = Math.max(width, height);
