@@ -41,7 +41,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-dark-500 sticky left-0 top-0 z-50 mx-auto flex h-16 w-full max-w-[1800px] items-center justify-between px-8">
+    <nav className="bg-dark-700 sticky left-0 top-0 z-50 mx-auto flex h-16 w-full max-w-[1800px] items-center justify-between px-8">
       <div className="flex items-center">
         <p className="mr-8 text-3xl font-bold text-white">Toolzy</p>
         <ul className="flex gap-2">
@@ -60,12 +60,11 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex items-center justify-end gap-2">
-        <div className="bg-dark border-dark-400/40 flex h-auto w-fit items-center justify-start gap-2 rounded-lg border px-2">
-          <Search className="shrink-0 grow-0 text-neutral-400" size={16} />
-          <Input className="py-2" theme="none" type="text" name="query" placeholder="Find the perfect tool" />
-        </div>
-        <Button theme="secondary" size="small">
-          Sign Up
+        <Button className="w-28" theme="primary" size={"small"}>
+          Login
+        </Button>
+        <Button className="w-28" theme="secondary" size={"small"}>
+          Register
         </Button>
       </div>
     </nav>

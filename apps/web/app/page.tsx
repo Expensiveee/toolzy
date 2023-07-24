@@ -12,8 +12,8 @@ export default async function Index() {
   return (
     <Container className="flex flex-col items-center justify-center">
       <main className="relative flex flex-col items-center bg-[url('/hero-blur.svg')] bg-cover bg-center bg-no-repeat py-20 text-center">
-        <Text className="mb-8 capitalize" tag="h1" size="display">
-          Hub of <span className="text-primary-500 font-bold">free online tools</span>
+        <Text className="mb-8 capitalize" tag="h1" weight={"medium"} size="display">
+          Hub of <span className="text-primary-500">free online tools</span>
           <span className="block">
             made for <DynamicText className="font-black" words={words} />
           </span>
@@ -24,10 +24,14 @@ export default async function Index() {
           <span className="block">who are passionate about building products that people love.</span>
         </Text>
 
-        <div className="bg-dark-700 mb-12 flex items-center rounded-xl p-1">
-          <Search size={18} className="m-2 shrink-0 grow-0 text-neutral-400" />
-          <Input placeholder="Find the perfect tool" theme="none" />
-          <Button className="w-28 justify-center py-2">Search</Button>
+        <div className="flex gap-2">
+          <div className="bg-dark-700 mb-12 flex w-72 items-center rounded-xl px-1">
+            <Search size={18} className="m-2 shrink-0 grow-0 text-neutral-400" />
+            <Input className="py-4" placeholder="Find the perfect tool" theme="none" />
+          </div>
+          <Button className="w-22 justify-center" size="large">
+            Search
+          </Button>
         </div>
 
         <div className="mb-12 flex gap-6">
