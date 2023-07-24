@@ -16,8 +16,10 @@ const text = cva("", {
     },
     color: {
       white: ["text-white"],
+      lightgray: ["text-neutral-200"],
       primary: ["text-primary-500"],
-      gray: ["text-neutral-200"],
+      darkgray: ["text-zinc-600"],
+      black: ["text-zinc-800"],
     },
     weight: {
       black: ["font-black"],
