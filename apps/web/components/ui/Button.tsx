@@ -80,7 +80,7 @@ const Button: React.FC<ButtonProps> = ({ className, theme, size, variant, icon, 
   }
 
   if (variant === "text-icon") {
-    const leftOrRight = direction === "right" ? "flex-row" : "flex-row-reverse";
+    const leftOrRight = direction === "left" ? "flex-row" : "flex-row-reverse";
     const combinedClassName = cx(button({ theme, size, className }), [leftOrRight, "gap-1.5"]);
 
     return (
