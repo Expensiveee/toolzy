@@ -3,16 +3,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 const text = cva("", {
   variants: {
     size: {
-      display: ["text-7xl"],
-      h1: ["text-6xl"],
-      h2: ["text-5xl"],
-      h3: ["text-4xl"],
-      h4: ["text-3xl"],
-      h5: ["text-2xl"],
-      h6: ["text-xl"],
-      body1: ["text-base"],
-      body2: ["text-md"],
-      caption: ["text-sm"],
+      display: ["lg:text-7xl", "text-5xl"],
+      h1: ["lg:text-6xl", "text-4xl"],
+      h2: ["lg:text-5xl", "text-3xl"],
+      h3: ["lg:text-4xl", "text-2xl"],
+      h4: ["lg:text-3xl", "text-xl"],
+      h5: ["lg:text-2xl", "text-lg"],
+      h6: ["lg:text-xl", "text-base"],
+      body1: ["lg:text-base", "text-sm"],
+      body2: ["lg:text-md", "text-xs"],
+      caption: ["lg:text-sm", "text-xxs"],
     },
     color: {
       white: ["text-white"],
