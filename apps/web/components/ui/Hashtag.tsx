@@ -7,8 +7,8 @@ const hashtag = cva(
   {
     variants: {
       theme: {
-        dark: ["bg-dark-700", "hover:bg-dark-600", "text-white", "border-dark-400/40"],
-        light: ["bg-white", "hover:bg-gray-100", "text-zinc-800", "border-zinc-400/40"],
+        dark: ["bg-dark-500", "hover:bg-dark-500/40", "text-white", "border-dark-400/40"],
+        light: ["bg-white", "hover:bg-gray-100", "text-zinc-800", "border-dark-400/40"],
       },
     },
   }
