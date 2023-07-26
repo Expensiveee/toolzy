@@ -5,25 +5,24 @@ import TextTransition, { presets } from "react-text-transition";
 type DynamicTextProps = {
   words: string[];
   className?: string;
-  interval?: number;
-  inline?: boolean;
 };
 
-const DynamicText: React.FC<DynamicTextProps> = ({ words, className, inline = true, interval = 2000 }) => {
+const DynamicText: React.FC<DynamicTextProps> = ({ words, className }) => {
   const [index, setIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const intervalId = setInterval(() => setIndex((index) => index + 1), interval);
+    const intervalId = setInterval(() => setIndex((index) => index + 1), 2500);
     return () => clearTimeout(intervalId);
-  }, []);
+
+  }, [2500]);
 
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return <span>You</span>;
 
   return (
-    <TextTransition inline={inline} className={className} springConfig={presets.gentle}>
+    <TextTransition inline={true} className={className} springConfig={presets.gentle}>
       {words[index % words.length]}
     </TextTransition>
   );
