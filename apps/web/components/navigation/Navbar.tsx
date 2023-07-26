@@ -4,8 +4,6 @@ import Link from "@web/components/ui/Link";
 import Button from "@web/components/ui/Button";
 import { FileText, Heart, Home, LifeBuoy, Tool } from "react-feather";
 import { usePathname } from "next/navigation";
-import { Search } from "react-feather";
-import Input from "@web/components/ui/Input";
 
 const navItems = [
   {
@@ -60,10 +58,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex items-center justify-end gap-2">
-        <Button className="w-28" theme="primary" size={"small"}>
+        <Button theme="primary" size={"medium"}>
           Login
         </Button>
-        <Button className="w-28" theme="secondary" size={"small"}>
+        <Button theme="secondary" size={"medium"}>
           Register
         </Button>
       </div>
