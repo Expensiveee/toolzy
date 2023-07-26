@@ -8,7 +8,7 @@ type ContainerProps = {
 
 const Container: React.FC<ContainerProps> = ({ children, className }) => {
   const combinedClassName = cx(
-    "mx-auto w-full bg-[url('/grid.svg')] bg-no-repeat bg-center bg-cover max-w-[1800px]",
+    "mx-auto w-full bg-[url('/assets/grid.svg')] bg-no-repeat bg-top bg-auto lg:bg-contain max-w-[1800px]",
     className
   );
 
