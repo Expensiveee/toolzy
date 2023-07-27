@@ -33,7 +33,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-dark-700 z-50 mx-auto flex h-16 w-full max-w-[1800px] items-center justify-between px-8">
+    <nav className="bg-dark-700 hidden z-50 mx-auto lg:flex h-16 w-full max-w-[1800px] items-center justify-between px-8">
       <div className="flex items-center">
         <p className="text-3xl font-bold text-white">Toolzy</p>
       </div>
