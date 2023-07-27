@@ -104,7 +104,7 @@ export default async function Index() {
   return (
     <Container className="flex flex-col items-center justify-center">
       <Section className="relative flex flex-col items-center bg-[url('/assets/hero-blur.svg')] bg-cover bg-bottom text-center">
-        <header className="w-full">
+        <main className="w-full">
           <Text className="mb-8 capitalize" tag="h1" weight={"black"} size="display">
             Hub of <span className="text-primary-500">free online tools</span>{" "}
             <span className="inline lg:block">
@@ -127,7 +127,7 @@ export default async function Index() {
               <Button variant="icon" icon={<Search size={18} />} className="inline lg:hidden" size="medium" />
             </div>
           </div>
-        </header>
+        </main>
 
         <div className="mb-12 flex gap-6">
           <Hashtag theme="dark" text="Design" />
@@ -239,7 +239,7 @@ export default async function Index() {
         </div>
       </Section>
       <Section className="bg-primary-500 flex flex-col items-center gap-20 xl:flex-row">
-        <div className="w-3/5">
+        <div className="w-full lg:w-3/5">
           <Hashtag className="mb-2 self-center lg:self-start" theme="light" text="FrequentlyAskedQuestions" />
 
           <Text
@@ -284,7 +284,7 @@ export default async function Index() {
             />
           </div>
         </div>
-        <div className="flex w-2/5 flex-col justify-center">
+        <div className="flex w-full  lg:w-2/5 flex-col justify-center">
           <div className="flex w-full flex-col gap-6 rounded-2xl lg:aspect-square lg:w-max lg:bg-gray-100">
             <div className=" border-dark-200 flex w-full cursor-pointer flex-col items-center justify-between gap-y-10 space-y-5 rounded-xl border bg-white px-6 py-8 shadow-2xl transition-transform duration-300 ease-in-out hover:scale-105 lg:translate-x-12 lg:translate-y-12">
               <div className="flex w-full items-start justify-start gap-8">

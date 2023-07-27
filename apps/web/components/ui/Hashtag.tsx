@@ -1,6 +1,5 @@
 "use client";
 import { cva, cx, type VariantProps } from "class-variance-authority";
-import Image from "next/image";
 
 const hashtag = cva(
   "rounded-full w-fit cursor-pointer px-4 py-2.5 border text-sm transition-colors duration-300 ease-in-out font-medium",
