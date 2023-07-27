@@ -5,8 +5,9 @@ import "../styles/global.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Toolzy",
-  description: "Free Online Tools for Developers, Designers and Entrepreneurs.",
+  title: "Toolzy | Free Online Tools for Developers, Designers and Entrepreneurs.",
+  description:
+    "We are a community of developers, designers, and product managers who are passionate about building products that people love.",
   themeColor: "#ff2148",
 };
 
