@@ -42,7 +42,7 @@ module.exports = {
         },
       },
       animation: {
-        ripple: `ripple-out ${RIPPLE_DURATION}ms ease-out forwards`,
+        ripple: `ripple-out ${RIPPLE_DURATION}ms ease-in forwards`,
       },
     },
   },
