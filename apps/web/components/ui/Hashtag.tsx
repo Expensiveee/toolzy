@@ -15,17 +15,15 @@ const hashtag = cva(
 );
 
 export interface HashtagProps extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof hashtag> {
-  emoji?: string;
   text: string;
 }
 
-const Hashtag: React.FC<HashtagProps> = ({ className, text, emoji, theme, ...props }) => {
+const Hashtag: React.FC<HashtagProps> = ({ className, text, theme, ...props }) => {
   const combinedClassName = cx(hashtag({ theme, className }), "flex select-none justify-center items-center gap-1");
 
   return (
     <span {...props} className={combinedClassName}>
       #{text}
-      {emoji && <Image alt={`${emoji} emoji`} src={`/emojis/${emoji}.svg`} height={16} width={16} />}
     </span>
   );
 };

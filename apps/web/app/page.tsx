@@ -130,9 +130,9 @@ export default async function Index() {
         </header>
 
         <div className="mb-12 flex gap-6">
-          <Hashtag theme="dark" text="Design" emoji={"palette"} />
-          <Hashtag theme="dark" text="Free" emoji={"unicorn"} />
-          <Hashtag theme="dark" text="Easy" emoji={"cool"} />
+          <Hashtag theme="dark" text="Design" />
+          <Hashtag theme="dark" text="Free" />
+          <Hashtag theme="dark" text="Easy" />
         </div>
 
         <div className="flex w-full select-none flex-col items-stretch justify-center gap-6 lg:flex-row">
@@ -183,7 +183,7 @@ export default async function Index() {
         </div>
 
         <div className="flex w-full flex-1 flex-col items-center">
-          <Hashtag className="mb-2 lg:self-start" theme="light" text="Features" emoji={"palette"} />
+          <Hashtag className="mb-2 lg:self-start" theme="light" text="Features" />
           <Text tag="h3" className="mb-4 mt-6 w-full text-left capitalize" weight={"extrabold"} size={"h3"}>
             Where Magic Meets Efficiency
           </Text>
