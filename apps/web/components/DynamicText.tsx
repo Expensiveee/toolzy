@@ -15,7 +15,7 @@ const DynamicText: React.FC<DynamicTextProps> = ({ words, className }) => {
     const intervalId = setInterval(() => setIndex((index) => index + 1), 2500);
     return () => clearTimeout(intervalId);
 
-  }, [2500]);
+  }, []);
 
   useEffect(() => setMounted(true), []);
 
