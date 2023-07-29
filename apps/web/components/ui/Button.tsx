@@ -4,7 +4,7 @@ import { RIPPLE_DURATION } from "@web/constants";
 import { cva, cx, type VariantProps } from "class-variance-authority";
 
 const button = cva(
-  "select-none flex relative overflow-hidden items-center justify-center rounded-[10px] h-fit shrink-0 grow-0 font-medium capitalize transition-colors duration-300 ease-in-out",
+  "select-none flex relative overflow-hidden items-center justify-center rounded-[10px] h-fit shrink-0 grow-0 font-medium capitalize transition-all duration-300 ease-in-out",
   {
     variants: {
       theme: {
@@ -61,19 +61,15 @@ const addRipple = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 };
 
 const Button: React.FC<ButtonProps> = ({ className, theme, size, variant, icon, direction = "left", ...props }) => {
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleMouseDown = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     addRipple(e);
-
-    if (props?.onClick) {
-      props.onClick(e);
-    }
   };
 
   if (variant === "icon") {
     const combinedClassName = cx(button({ theme, size, className }), "aspect-square");
 
     return (
-      <button onClick={handleClick} className={combinedClassName} {...props}>
+      <button onMouseDown={handleMouseDown} className={combinedClassName} {...props}>
         {icon}
       </button>
     );
@@ -84,14 +80,14 @@ const Button: React.FC<ButtonProps> = ({ className, theme, size, variant, icon, 
     const combinedClassName = cx(button({ theme, size, className }), [leftOrRight, "gap-1.5"]);
 
     return (
-      <button onClick={handleClick} className={combinedClassName} {...props}>
+      <button onMouseDown={handleMouseDown} className={combinedClassName} {...props}>
         {icon}
         {props?.children}
       </button>
     );
   }
 
-  return <button onClick={handleClick} className={button({ theme, size, className })} {...props} />;
+  return <button onMouseDown={handleMouseDown} className={button({ theme, size, className })} {...props} />;
 };
 
 export default Button;
