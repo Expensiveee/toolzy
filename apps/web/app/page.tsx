@@ -130,9 +130,9 @@ export default async function Index() {
         </main>
 
         <div className="mb-12 flex gap-6">
-          <Hashtag theme="dark" text="Design" />
-          <Hashtag theme="dark" text="Free" />
-          <Hashtag theme="dark" text="Easy" />
+          <Hashtag emoji="🔧" theme="dark" text="Toolzy" />
+          <Hashtag emoji="😍" theme="dark" text="Free" />
+          <Hashtag emoji="🎂" theme="dark" text="Easy" />
         </div>
 
         <div className="flex w-full select-none flex-col items-stretch justify-center gap-6 lg:flex-row">
@@ -183,7 +183,7 @@ export default async function Index() {
         </div>
 
         <div className="flex w-full flex-1 flex-col items-center">
-          <Hashtag className="mb-2 lg:self-start" theme="light" text="Features" />
+          <Hashtag emoji="✨" className="mb-2 lg:self-start" theme="light" text="Features" />
           <Text tag="h3" className="mb-4 mt-6 w-full text-left capitalize" weight={"extrabold"} size={"h3"}>
             Where Magic Meets Efficiency
           </Text>
@@ -206,7 +206,7 @@ export default async function Index() {
       </Section>
       <Section className="flex flex-col items-center gap-16 2xl:flex-row 2xl:gap-32">
         <div className="flex flex-col justify-start 2xl:w-2/5">
-          <Hashtag className="mb-2 self-center lg:self-start" theme="dark" text="TryNow" />
+          <Hashtag emoji="🚀" className="mb-2 self-center lg:self-start" theme="dark" text="TryNow" />
           <Text
             tag="h3"
             className="mb-4 mt-6 flex w-full items-center text-left capitalize"
@@ -240,7 +240,12 @@ export default async function Index() {
       </Section>
       <Section className="bg-primary-500 flex flex-col items-center gap-20 xl:flex-row">
         <div className="w-full lg:w-3/5">
-          <Hashtag className="mb-2 self-center lg:self-start" theme="light" text="FrequentlyAskedQuestions" />
+          <Hashtag
+            emoji="❓"
+            className="mb-2 self-center lg:self-start"
+            theme="light"
+            text="FrequentlyAskedQuestions"
+          />
 
           <Text
             tag="h3"
@@ -284,7 +289,7 @@ export default async function Index() {
             />
           </div>
         </div>
-        <div className="flex w-full lg:w-2/5 flex-col justify-center">
+        <div className="flex w-full flex-col justify-center lg:w-2/5">
           <div className="flex w-full flex-col gap-6 rounded-2xl lg:aspect-square lg:w-max lg:bg-gray-100">
             <div className=" border-dark-200 flex w-full cursor-pointer flex-col items-center justify-between gap-y-10 space-y-5 rounded-xl border bg-white px-6 py-8 shadow-2xl transition-transform duration-300 ease-in-out hover:scale-105 lg:translate-x-12 lg:translate-y-12">
               <div className="flex w-full items-start justify-start gap-8">
