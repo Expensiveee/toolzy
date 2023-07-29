@@ -1,9 +1,8 @@
 "use client";
+import { useEffect, useState } from "react";
 import JSConfetti from "js-confetti";
 import Text from "@web/components/ui/Text";
 import { cva, cx, type VariantProps } from "class-variance-authority";
-
-const jsConfetti = new JSConfetti();
 
 const hashtag = cva(
   "rounded-full w-fit cursor-pointer px-4 py-2.5 border text-sm transition-all duration-150 ease-in-out font-medium",
@@ -24,9 +23,16 @@ export interface HashtagProps extends React.HTMLAttributes<HTMLSpanElement>, Var
 
 const Hashtag: React.FC<HashtagProps> = ({ className, text, theme, emoji = "🔧", ...props }) => {
   const combinedClassName = cx(hashtag({ theme, className }), "flex select-none gap-1 justify-center items-center");
+  const [confetti, setConfetti] = useState<JSConfetti | null>(null);
+
+  useEffect(() => {
+    setConfetti(new JSConfetti());
+  }, []);
 
   const handleClick = () => {
-    jsConfetti.addConfetti({
+    if (!confetti) return;
+
+    confetti.addConfetti({
       confettiNumber: 20,
       emojiSize: 38,
       emojis: [emoji],
@@ -41,8 +47,7 @@ const Hashtag: React.FC<HashtagProps> = ({ className, text, theme, emoji = "🔧
       color={theme === "dark" ? "lightgray" : "darkgray"}
       size="caption"
     >
-      #
-      {text}
+      #{text}
       <span className="text-base">{emoji}</span>
     </Text>
   );
