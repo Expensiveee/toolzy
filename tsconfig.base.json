@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@web/*": ["apps/web/*"],
-      "@api/*": ["apps/api/*"]
+      "@api/*": ["apps/api/*"],
+      "@libs/prisma": ["libs/prisma/src/main.ts"],
+      "@web/*": ["apps/web/*"]
     },
     "strict": true,
     "noImplicitAny": true,
