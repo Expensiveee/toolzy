@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "@web/components/ui/Link";
 import { usePathname } from "next/navigation";
-import { Home, FileText, Tool, Share, Heart } from "react-feather";
+import { Home, FileText, Tool, Heart } from "react-feather";
 import Button from "../ui/Button";
 
 const navLinks = [
@@ -31,6 +31,8 @@ const navLinks = [
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const pathname = usePathname();
 
@@ -46,8 +48,42 @@ const Navbar = () => {
     setIsMenuOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    // Check if the code is running in a browser environment
+    if (typeof window !== "undefined") {
+      // Add a scroll event listener to control the navbar
+      window.addEventListener("scroll", handleScroll);
+
+      // Cleanup function to remove the event listener when the component unmounts
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [lastScrollY]);
+
+  const handleScroll = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY < 60) return;
+
+      if (window.scrollY > lastScrollY) {
+        // if scroll down hide the navbar
+        setShow(false);
+      } else {
+        // if scroll up show the navbar
+        setShow(true);
+      }
+
+      // remember current page location to use in the next move
+      setLastScrollY(window.scrollY);
+    }
+  };
+
   return (
-    <nav className={`bg-dark-700 z-50 flex h-16 flex-col items-center justify-between px-3 lg:px-8 lg:flex-row`}>
+    <nav
+      className={`bg-dark-700  ${
+        show ? "top-0" : "-top-16"
+      }  sticky z-50 flex h-16 w-full flex-col items-center justify-between px-3 transition-all duration-300 ease-in-out lg:flex-row lg:px-8`}
+    >
       {/** Logo & Hamburger */}
       <div className="z-50 flex h-full w-full items-center justify-between">
         <Link href="/">
@@ -61,7 +97,7 @@ const Navbar = () => {
           theme="outline"
           size={"small"}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className={`flex aspect-square flex-col border-0 justify-center gap-1 duration-300 ease-in-out lg:hidden ${
+          className={`flex aspect-square flex-col justify-center gap-1 border-0 duration-300 ease-in-out lg:hidden ${
             isMenuOpen ? "rotate-45" : "rotate-0"
           }`}
         >
@@ -103,12 +139,12 @@ const Navbar = () => {
 
       {/** All Mobile Links */}
       <div
-        className={`bg-dark-600 fixed left-0 top-[66px] z-40 flex h-[calc(100vh-66px)] w-full flex-col items-center gap-2 overflow-auto px-4 py-8 transition-all duration-500 ease-in-out lg:hidden ${
+        className={`bg-dark-600 fixed left-0 top-16 z-40 flex h-[calc(100vh-64px)] w-full flex-col items-center justify-between gap-2 overflow-auto px-4 py-8 transition-all duration-500 ease-in-out lg:hidden ${
           isMenuOpen ? "left-0" : "left-full"
         }`}
       >
         {/** Mobile Links */}
-        <ul className="flex w-full flex-col gap-2">
+        <ul className="flex max-h-[60vh] w-full flex-col gap-2 overflow-auto">
           {navLinks.map((link, i) => (
             <li key={i}>
               <Link
@@ -124,19 +160,17 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="bg-dark-400/70 my-4 block h-px w-full">&nbsp;</div>
-
         {/** Mobile Login/Register */}
-        <ul className="flex w-full gap-2">
+        <ul className="border-dark-400/70 flex w-full gap-2 border-t pt-8">
           <li className="flex-1">
-              <Button className="w-full" theme="primary" size="large">
-                Sign In
-              </Button>
+            <Button className="w-full" theme="primary" size="large">
+              Sign In
+            </Button>
           </li>
           <li className="flex-1">
-              <Button className="w-full" theme="secondary" size="large">
-                Register
-              </Button>
+            <Button className="w-full" theme="secondary" size="large">
+              Register
+            </Button>
           </li>
         </ul>
       </div>
