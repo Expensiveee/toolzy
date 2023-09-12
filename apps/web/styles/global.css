@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *::-webkit-scrollbar {
+    @apply w-1;
+    @apply bg-dark-400;
+    @apply rounded-xl;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-primary-500;
+    @apply rounded-2xl;
+  }
+}
