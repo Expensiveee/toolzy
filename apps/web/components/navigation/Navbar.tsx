@@ -98,7 +98,7 @@ const Navbar = () => {
           theme="outline"
           size={"small"}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className={`flex aspect-square flex-col justify-center gap-1 border-0 duration-300 ease-in-out lg:hidden ${
+          className={`flex aspect-square flex-col justify-center gap-1.5 border-0 duration-300 ease-in-out lg:hidden ${
             isMenuOpen ? "rotate-45" : "rotate-0"
           }`}
         >
