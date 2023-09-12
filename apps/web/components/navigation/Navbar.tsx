@@ -38,9 +38,9 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isMenuOpen === true) {
-      document.body.style.overflowY = "hidden";
+      document.body.classList.add("menu-open");
     } else {
-      document.body.style.overflowY = "";
+      document.body.classList.remove("menu-open");
     }
   }, [isMenuOpen]);
 
@@ -81,7 +81,7 @@ const Navbar = () => {
   return (
     <nav
       className={`bg-dark-700  ${
-        show ? "top-0" : "-top-16"
+        show || isMenuOpen ? "top-0" : "-top-16"
       }  sticky z-50 flex h-16 w-full flex-col items-center justify-between px-3 transition-all duration-300 ease-in-out lg:flex-row lg:px-8`}
     >
       {/** Logo & Hamburger */}
