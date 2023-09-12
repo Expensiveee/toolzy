@@ -64,7 +64,6 @@ const Navbar = () => {
   const handleScroll = () => {
     if (typeof window !== "undefined") {
       if (isMenuOpen && window.innerWidth > 1024) setIsMenuOpen(false);
-
       if (window.scrollY < 60) return;
 
       if (window.scrollY > lastScrollY) {
