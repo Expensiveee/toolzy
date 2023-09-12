@@ -38,9 +38,9 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isMenuOpen === true) {
-      document.body.style.overflowY = "hidden";
+      document.body.classList.add("menu-open");
     } else {
-      document.body.style.overflowY = "";
+      document.body.classList.remove("menu-open");
     }
   }, [isMenuOpen]);
 
@@ -63,6 +63,7 @@ const Navbar = () => {
 
   const handleScroll = () => {
     if (typeof window !== "undefined") {
+      if (isMenuOpen && window.innerWidth > 1024) setIsMenuOpen(false);
       if (window.scrollY < 60) return;
 
       if (window.scrollY > lastScrollY) {
@@ -80,9 +81,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-dark-700  ${
-        show ? "top-0" : "-top-16"
-      }  sticky z-50 flex h-16 w-full flex-col items-center justify-between px-3 transition-all duration-300 ease-in-out lg:flex-row lg:px-8`}
+      className={`bg-dark-700 sticky z-50 flex h-16 w-full flex-col items-center justify-between px-3 transition-all duration-300 ease-in-out lg:flex-row lg:px-8 ${
+        show || isMenuOpen ? "top-0" : "-top-16"
+      }`}
     >
       {/** Logo & Hamburger */}
       <div className="z-50 flex h-full w-full items-center justify-between">
@@ -97,7 +98,7 @@ const Navbar = () => {
           theme="outline"
           size={"small"}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className={`flex aspect-square flex-col justify-center gap-1 border-0 duration-300 ease-in-out lg:hidden ${
+          className={`flex aspect-square flex-col justify-center gap-1.5 border-0 duration-300 ease-in-out lg:hidden ${
             isMenuOpen ? "rotate-45" : "rotate-0"
           }`}
         >
@@ -139,12 +140,12 @@ const Navbar = () => {
 
       {/** All Mobile Links */}
       <div
-        className={`bg-dark-600 fixed left-0 top-16 z-40 flex h-[calc(100vh-64px)] w-full flex-col items-center justify-between gap-2 overflow-auto px-4 py-8 transition-all duration-500 ease-in-out lg:hidden ${
+        className={`bg-dark-600 fixed left-0 top-16 z-40 flex h-[calc(100dvh-64px)] w-full flex-col items-center justify-between gap-2 overflow-auto px-4 py-8 transition-all duration-500 ease-in-out lg:hidden ${
           isMenuOpen ? "left-0" : "left-full"
         }`}
       >
         {/** Mobile Links */}
-        <ul className="flex max-h-[60vh] w-full flex-col gap-2 overflow-auto">
+        <ul className="flex max-h-[60dvh] w-full flex-col gap-2 overflow-auto">
           {navLinks.map((link, i) => (
             <li key={i}>
               <Link

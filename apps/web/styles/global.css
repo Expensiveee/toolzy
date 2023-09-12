@@ -13,4 +13,9 @@
     @apply bg-primary-500;
     @apply rounded-2xl;
   }
+
+  .menu-open {
+    @apply overflow-hidden;
+    @apply lg:overflow-auto;
+  }
 }
