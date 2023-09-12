@@ -140,12 +140,12 @@ const Navbar = () => {
 
       {/** All Mobile Links */}
       <div
-        className={`bg-dark-600 fixed left-0 top-16 z-40 flex h-[calc(100vh-64px)] w-full flex-col items-center justify-between gap-2 overflow-auto px-4 py-8 transition-all duration-500 ease-in-out lg:hidden ${
+        className={`bg-dark-600 fixed left-0 top-16 z-40 flex h-[calc(100dvh-64px)] w-full flex-col items-center justify-between gap-2 overflow-auto px-4 py-8 transition-all duration-500 ease-in-out lg:hidden ${
           isMenuOpen ? "left-0" : "left-full"
         }`}
       >
         {/** Mobile Links */}
-        <ul className="flex max-h-[60vh] w-full flex-col gap-2 overflow-auto">
+        <ul className="flex max-h-[60dvh] w-full flex-col gap-2 overflow-auto">
           {navLinks.map((link, i) => (
             <li key={i}>
               <Link
