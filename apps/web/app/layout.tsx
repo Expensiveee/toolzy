@@ -1,4 +1,5 @@
 import Navbar from "@web/components/navigation/Navbar";
+import Footer from "@web/components/navigation/Footer";
 import { Inter } from "next/font/google";
 import "../styles/global.css";
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`bg-dark-600 overflow-x-hidden text-white ${inter.className}`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
